@@ -1,0 +1,1 @@
+INSERT INTO FORM (ID, NAME) VALUES ('X', 'Y');
