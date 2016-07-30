@@ -12,13 +12,17 @@ public class Form {
 	@Column
 	private String name;
 	
-	
-	
-	public boolean save(){
-		
-		
-		return false;
+	public long getId() {
+		return id;
 	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}	
 	
-
 }
