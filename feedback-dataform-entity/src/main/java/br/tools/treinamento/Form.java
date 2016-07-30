@@ -1,15 +1,17 @@
 package br.tools.treinamento;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
-public class Form {
+@Entity (name = "Form")
+public class Form implements Serializable{
 	@Id
-	@Column
+	@Column(name = "ID")
 	private String id;
-	@Column
+	@Column(name = "NAME")
 	private String name;
 	
 	public String getId() {
@@ -23,6 +25,5 @@ public class Form {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}	
-	
+	}		
 }
