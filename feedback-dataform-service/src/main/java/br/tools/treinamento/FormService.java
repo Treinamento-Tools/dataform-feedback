@@ -12,7 +12,7 @@ public class FormService implements Serializable{
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public Form save(Form form){		
+	public FormEntity save(FormEntity form){		
 		entityManager.merge(form);
 		return form;
 		

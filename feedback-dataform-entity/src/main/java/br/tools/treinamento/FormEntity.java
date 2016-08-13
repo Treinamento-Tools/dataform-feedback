@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity (name = "Form")
-public class Form implements Serializable{
+public class FormEntity implements Serializable{
 	@Id
 	@Column(name = "ID")
 	private String id;
