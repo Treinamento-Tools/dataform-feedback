@@ -23,10 +23,5 @@ public class QuestionService implements Serializable{
 		for (Question question : questions) {
 			entityManager.persist(question);
 		}
-		
-		
-		
-		
-		
 	}
 }
