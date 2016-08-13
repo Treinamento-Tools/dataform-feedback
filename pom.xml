@@ -41,5 +41,6 @@
         <module>feedback-dataform-entity</module>
         <module>feedback-dataform-service</module>
         <module>feedback-dataform-web</module>
+        <module>feedback-dataform-bean</module>
     </modules>
 </project>
