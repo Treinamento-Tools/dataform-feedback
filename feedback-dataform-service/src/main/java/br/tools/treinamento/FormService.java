@@ -9,6 +9,11 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class FormService implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3853015604167051102L;
+	
 	@PersistenceContext
 	private EntityManager entityManager;
 	

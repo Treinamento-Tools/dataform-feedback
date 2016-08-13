@@ -10,7 +10,7 @@ public class Question {
     private String id;
 	
 	@XmlElement(name = "fieldId")
-	private String fieldId;
+	private Integer fieldId;
 	
 	@XmlElement(name = "question")
 	private String question;
@@ -32,14 +32,14 @@ public class Question {
 	/**
 	 * @return the fieldId
 	 */
-	public String getFieldId() {
+	public Integer getFieldId() {
 		return fieldId;
 	}
 
 	/**
 	 * @param fieldId the fieldId to set
 	 */
-	public void setFieldId(String fieldId) {
+	public void setFieldId(Integer fieldId) {
 		this.fieldId = fieldId;
 	}
 

@@ -8,6 +8,11 @@ import javax.persistence.Id;
 
 @Entity (name = "Form")
 public class Form implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5302064179892383882L;
+	
 	@Id
 	@Column(name = "ID")
 	private String id;

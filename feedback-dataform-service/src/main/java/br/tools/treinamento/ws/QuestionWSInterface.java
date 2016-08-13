@@ -8,7 +8,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import br.tools.treinamento.Question;
+import br.tools.treinamento.bean.Question;
 
 @Local
 @WebService(serviceName = "QuestionWSInterface", portName = "QuestionWSInterface", targetNamespace = "http://treinamento.tools.br/bean/")
