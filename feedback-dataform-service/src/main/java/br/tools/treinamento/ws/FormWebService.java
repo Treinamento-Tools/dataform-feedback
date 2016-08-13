@@ -13,7 +13,7 @@ import br.tools.treinamento.bean.Form;
 @WebService(serviceName="FormWebService"
 , portName="FormWebService"
 , targetNamespace="http://treinamento.tools.br/form/"
-, endpointInterface="http://treinamento.tools.br/FormWebServiceLocal/")
+, endpointInterface="br.tools.treinamento.ws.FormWebServiceLocal")
 public class FormWebService implements FormWebServiceLocal{
 	@EJB
 	private FormService formService;
