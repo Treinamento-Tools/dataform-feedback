@@ -8,7 +8,9 @@ import javax.jws.WebService;
 import br.tools.treinamento.bean.Form;
 
 @Local
-@WebService(serviceName = "FormWS", portName = "FormWS", targetNamespace = "http://treinamento.tools.br/form/")
+@WebService(serviceName="FormWebService"
+, portName="FormWebService"
+, targetNamespace="http://treinamento.tools.br/form/")
 public interface FormWebServiceLocal {
     @WebMethod
 	public void save (
