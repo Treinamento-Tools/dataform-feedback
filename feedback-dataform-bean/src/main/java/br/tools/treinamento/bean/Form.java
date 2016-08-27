@@ -2,15 +2,19 @@ package br.tools.treinamento.bean;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "Form")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Form implements Serializable{
 
-	@XmlElement(name = "Id")
+	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "id")
 	private String id;
-	@XmlElement(name = "Name")
+	@XmlElement(name = "name")
 	private String name;
 	
 	public String getId() {
