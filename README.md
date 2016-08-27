@@ -23,17 +23,17 @@ Form {
 }
 
 KeyQuestion {
-    field_id
+    id
 }
 
 Question {
-    field_id
     id
+    field_id
     question
 }
 
 Response {
-    answers (Map<field_id, answer>)
+    answers (Map<String, String>)
     completed (0/1)
     token
     metadata {
