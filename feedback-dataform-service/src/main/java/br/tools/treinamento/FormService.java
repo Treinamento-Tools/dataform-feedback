@@ -1,6 +1,7 @@
 package br.tools.treinamento;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -22,5 +23,28 @@ public class FormService implements Serializable {
         return form;
 
     }
-
+    
+    public List<Form> searchAll() {
+        return entityManager.createQuery("SELECT form FROM Form form", Form.class)
+        					.getResultList();
+    }
+    
+    public Form find(String id) {
+        return entityManager.find(Form.class, id);
+    }
+    
+    public Form create(Form form) {
+        entityManager.persist(form);
+        return form;
+    }
+    
+    public Form update(Form form) {
+        entityManager.persist(form);
+        return form;
+    }
+    
+    public void delete(String id) {
+    	Form form = find(id);
+        entityManager.remove(form);
+    }
 }
