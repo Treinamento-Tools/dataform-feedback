@@ -11,69 +11,68 @@ import javax.persistence.Table;
 @Table(name = "QUESTION")
 public class Question implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "id")
-	private String id;
-	
-	@Column(name = "field_id")
-	private Integer fieldId;
-	
-	@Column(name = "question")
-	private String question;
-	
+    @Id
+    @Column(name = "id")
+    private String id;
 
-	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
-	}
+    @Column(name = "field_id")
+    private Integer fieldId;
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
+    @Column(name = "question")
+    private String question;
 
-	/**
-	 * @return the fieldId
-	 */
-	public Integer getFieldId() {
-		return fieldId;
-	}
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
 
-	/**
-	 * @param fieldId the fieldId to set
-	 */
-	public void setFieldId(Integer fieldId) {
-		this.fieldId = fieldId;
-	}
+    /**
+     * @param id
+     *            the id to set
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	/**
-	 * @return the question
-	 */
-	public String getQuestion() {
-		return question;
-	}
+    /**
+     * @return the fieldId
+     */
+    public Integer getFieldId() {
+        return fieldId;
+    }
 
-	/**
-	 * @param question the question to set
-	 */
-	public void setQuestion(String question) {
-		this.question = question;
-	}
+    /**
+     * @param fieldId
+     *            the fieldId to set
+     */
+    public void setFieldId(final Integer fieldId) {
+        this.fieldId = fieldId;
+    }
 
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
+    /**
+     * @return the question
+     */
+    public String getQuestion() {
+        return question;
+    }
+
+    /**
+     * @param question
+     *            the question to set
+     */
+    public void setQuestion(final String question) {
+        this.question = question;
+    }
+
+    /**
+     * @return the serialversionuid
+     */
+    public static long getSerialversionuid() {
+        return Question.serialVersionUID;
+    }
+
 }

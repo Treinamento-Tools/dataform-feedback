@@ -14,7 +14,8 @@ import br.tools.treinamento.bean.Question;
 @WebService(targetNamespace = "http://treinamento.tools.br/question/")
 public interface QuestionWSInterface extends Serializable {
 
-	@WebMethod
-	public void load(@WebParam(name = "questions", targetNamespace = "http://treinamento.tools.br/bean/") List<Question> questions);
+    @WebMethod
+    public void load(
+            @WebParam(name = "questions", targetNamespace = "http://treinamento.tools.br/bean/") List<Question> questions);
 
 }

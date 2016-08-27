@@ -5,27 +5,22 @@ import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-import br.tools.treinamento.FormEntity;
 import br.tools.treinamento.FormService;
 import br.tools.treinamento.bean.Form;
 
 @Stateless
-@WebService(serviceName="FormWebService"
-, portName="FormWebService"
-, targetNamespace="http://treinamento.tools.br/form/"
-, endpointInterface="br.tools.treinamento.ws.FormWebServiceLocal")
-public class FormWebService implements FormWebServiceLocal{
-	@EJB
-	private FormService formService;
-	
-	@WebMethod
-	public void save(Form form){
-		FormEntity formEntity = new FormEntity();
-		formEntity.setId(formEntity.getId());
-		formEntity.setName(formEntity.getName());
-		
-		formService.save(formEntity);
-	}
-	      
+@WebService(serviceName = "FormWebService", portName = "FormWebService", targetNamespace = "http://treinamento.tools.br/form/", endpointInterface = "br.tools.treinamento.ws.FormWebServiceLocal")
+public class FormWebService implements FormWebServiceLocal {
+    @EJB
+    private FormService formService;
+
+    @Override
+    @WebMethod
+    public void save(final Form form) {
+        final br.tools.treinamento.Form formEntity = new br.tools.treinamento.Form();
+        formEntity.setId(formEntity.getId());
+        formEntity.setName(formEntity.getName());
+        formService.save(formEntity);
+    }
 
 }

@@ -10,22 +10,22 @@
     <name>EJB</name>
     <packaging>ejb</packaging>
     <dependencies>
-    	<dependency>
-                <groupId>javax</groupId>
-                <artifactId>javaee-api</artifactId>
-                <scope>provided</scope>
-            </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>br.tools.treinamento</groupId>
             <artifactId>feedback-dataform-entity</artifactId>
             <version>${project.parent.version}</version>
-        </dependency> 
+        </dependency>
         <dependency>
             <groupId>br.tools.treinamento</groupId>
             <artifactId>feedback-dataform-bean</artifactId>
             <version>${project.parent.version}</version>
-        </dependency>        
-         <dependency>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <scope>provided</scope>
