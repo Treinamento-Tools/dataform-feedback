@@ -11,7 +11,7 @@ import javax.jws.WebService;
 import br.tools.treinamento.bean.Question;
 
 @Local
-@WebService(serviceName = "QuestionWSInterface", portName = "QuestionWSInterface", targetNamespace = "http://treinamento.tools.br/bean/")
+@WebService(targetNamespace = "http://treinamento.tools.br/question/")
 public interface QuestionWSInterface extends Serializable {
 
 	@WebMethod

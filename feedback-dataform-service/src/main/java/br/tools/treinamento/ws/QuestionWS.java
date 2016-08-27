@@ -11,7 +11,10 @@ import br.tools.treinamento.QuestionService;
 import br.tools.treinamento.bean.Question;
 
 @Stateless
-@WebService(serviceName = "QuestionWS", portName = "QuestionWS", targetNamespace = "http://treinamento.tools.br/bean/", endpointInterface = "br.tools.treinamento.ws.QuestionWS")
+@WebService(serviceName = "QuestionWS"
+, portName = "QuestionWS"
+, targetNamespace = "http://treinamento.tools.br/question/"
+, endpointInterface = "br.tools.treinamento.ws.QuestionWSInterface")
 public class QuestionWS implements QuestionWSInterface {
 
 	/**
