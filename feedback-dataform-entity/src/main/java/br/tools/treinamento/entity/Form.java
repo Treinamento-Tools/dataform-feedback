@@ -1,4 +1,4 @@
-package br.tools.treinamento;
+package br.tools.treinamento.entity;
 
 import java.io.Serializable;
 

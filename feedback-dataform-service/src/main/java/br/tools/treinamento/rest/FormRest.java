@@ -22,63 +22,68 @@ import br.tools.treinamento.bean.Form;
 @Stateless
 @Path("/form")
 public class FormRest implements Serializable {
-	@EJB
-	private FormService formService;
+    @EJB
+    private FormService formService;
 
-	@Path("/")
-	@GET // quando chamado via o método GET
-	@Produces("application/json") // Define o tipo de retorno
-	public Response search() {
-		
-		final List<Form> forms = new ArrayList<Form>(); //form --bean
-		for ( br.tools.treinamento.Form formEntity:  formService.searchAll()) {
-		     Form formBean = new Form();
-		     formBean.setId(formEntity.getId());
-		     formBean.setName(formEntity.getName());
-		     forms.add(formBean);
-		}
-		return Response.ok(forms).build();		
-	}
-	
-	@Path("/{id}") 
-    @GET // quando chamado via o método GET
+    @Path("/")
+    @GET // quando chamado via o mï¿½todo GET
     @Produces("application/json") // Define o tipo de retorno
-    public Response find(@PathParam("id") String id) { // Uma alternativa seria 
-                                                     // utilizar @QueryParam("id")
-                                                     // nesse caso, não é necessário 
-                                                     // o valor {id} no @Path
+    public Response search() {
+
+        final List<Form> forms = new ArrayList<Form>(); // form --bean
+        for (br.tools.treinamento.entity.Form formEntity : formService.searchAll()) {
+            Form formBean = new Form();
+            formBean.setId(formEntity.getId());
+            formBean.setName(formEntity.getName());
+            forms.add(formBean);
+        }
+        return Response.ok(forms).build();
+    }
+
+    @Path("/{id}")
+    @GET // quando chamado via o mï¿½todo GET
+    @Produces("application/json") // Define o tipo de retorno
+    public Response find(@PathParam("id") String id) { // Uma alternativa seria
+                                                       // utilizar
+                                                       // @QueryParam("id")
+                                                       // nesse caso, nï¿½o ï¿½
+                                                       // necessï¿½rio
+                                                       // o valor {id} no @Path
         return Response.ok(formService.find(id)).build();
     }
-	
-	@Path("/")
-    @POST // quando chamado via o método POST
+
+    @Path("/")
+    @POST // quando chamado via o mï¿½todo POST
     @Produces("application/json") // Define o tipo de retorno
-    @Consumes("application/json") // Define o tipo de parametro que virá do cliente
+    @Consumes("application/json") // Define o tipo de parametro que virï¿½ do
+                                  // cliente
     public Response create(Form form) {
-		br.tools.treinamento.Form formEntity = new br.tools.treinamento.Form();
-		formEntity.setId(form.getId());
-		formEntity.setName(form.getName());
+        br.tools.treinamento.entity.Form formEntity = new br.tools.treinamento.entity.Form();
+        formEntity.setId(form.getId());
+        formEntity.setName(form.getName());
         return Response.ok(formService.create(formEntity)).build();
     }
-	
-	@Path("/")
-    @PUT // quando chamado via o método PUT
+
+    @Path("/")
+    @PUT // quando chamado via o mï¿½todo PUT
     @Produces("application/json") // Define o tipo de retorno
-    @Consumes("application/json") // Define o tipo de parametro que virá do cliente
+    @Consumes("application/json") // Define o tipo de parametro que virï¿½ do
+                                  // cliente
     public Response update(Form form) {
-		br.tools.treinamento.Form formEntity = new br.tools.treinamento.Form();
-		formEntity.setId(form.getId());
-		formEntity.setName(form.getName());
+        br.tools.treinamento.entity.Form formEntity = new br.tools.treinamento.entity.Form();
+        formEntity.setId(form.getId());
+        formEntity.setName(form.getName());
         return Response.ok(formService.update(formEntity)).build();
     }
-	
-	@Path("/{id}")
-    @DELETE // quando chamado via o método DELETE
+
+    @Path("/{id}")
+    @DELETE // quando chamado via o mï¿½todo DELETE
     @Produces("application/json") // Define o tipo de retorno
-    @Consumes("application/json") // Define o tipo de parametro que virá do cliente
+    @Consumes("application/json") // Define o tipo de parametro que virï¿½ do
+                                  // cliente
     public Response delete(@PathParam("id") String id) {
-		formService.delete(id);
-		return Response.ok().build();
-    } 
+        formService.delete(id);
+        return Response.ok().build();
+    }
 
 }

@@ -17,7 +17,7 @@ public class FormWebService implements FormWebServiceLocal {
     @Override
     @WebMethod
     public void save(final Form form) {
-        final br.tools.treinamento.Form formEntity = new br.tools.treinamento.Form();
+        final br.tools.treinamento.entity.Form formEntity = new br.tools.treinamento.entity.Form();
         formEntity.setId(formEntity.getId());
         formEntity.setName(formEntity.getName());
         formService.save(formEntity);

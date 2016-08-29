@@ -22,90 +22,89 @@ import br.tools.treinamento.bean.Question;
 @Path("/question")
 public class QuestionRest implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7371352048092236794L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -7371352048092236794L;
 
-	@Path("/question")
-	@GET 
-	@Produces("application/json")
-	public Response search() {
-		QuestionService questionService = new QuestionService();	
-		
-		final List<br.tools.treinamento.Question> questions = new ArrayList<br.tools.treinamento.Question>();
-		
-		for ( Question questionBean :  questionService.searchAll()) {
-			br.tools.treinamento.Question questionEntity = new br.tools.treinamento.Question();
-			questionEntity.setId(questionBean.getId());
-			questionEntity.setFieldId(questionBean.getFieldId());
-			questionEntity.setQuestion(questionBean.getQuestion());
-			questions.add(questionEntity);
-		}
+    @Path("/question")
+    @GET
+    @Produces("application/json")
+    public Response search() {
+        QuestionService questionService = new QuestionService();
 
-		return Response.ok(questions).build();
-	}
-	
-    @Path("/question/{id}") 
-    @GET 
-    @Produces("application/json") 
-    public Response find(@PathParam("id") Long id) { 
-		QuestionService questionService = new QuestionService();    
-		
-		Question questionBean = (Question) questionService.findById(id);
-		br.tools.treinamento.Question questionEntity = new br.tools.treinamento.Question();
-		
-		questionEntity.setId(questionBean.getId());
-		questionEntity.setFieldId(questionBean.getFieldId());
-		questionEntity.setQuestion(questionBean.getQuestion());
-		
+        final List<br.tools.treinamento.entity.Question> questions = new ArrayList<br.tools.treinamento.entity.Question>();
+
+        for (Question questionBean : questionService.searchAll()) {
+            br.tools.treinamento.entity.Question questionEntity = new br.tools.treinamento.entity.Question();
+            questionEntity.setId(questionBean.getId());
+            questionEntity.setFieldId(questionBean.getFieldId());
+            questionEntity.setQuestion(questionBean.getQuestion());
+            questions.add(questionEntity);
+        }
+
+        return Response.ok(questions).build();
+    }
+
+    @Path("/question/{id}")
+    @GET
+    @Produces("application/json")
+    public Response find(@PathParam("id") Long id) {
+        QuestionService questionService = new QuestionService();
+
+        Question questionBean = (Question) questionService.findById(id);
+        br.tools.treinamento.entity.Question questionEntity = new br.tools.treinamento.entity.Question();
+
+        questionEntity.setId(questionBean.getId());
+        questionEntity.setFieldId(questionBean.getFieldId());
+        questionEntity.setQuestion(questionBean.getQuestion());
+
         return Response.ok(questionEntity).build();
     }
-	
+
     @Path("/{id}")
-    @DELETE 
-    @Produces("application/json") 
-    @Consumes("application/json") 
+    @DELETE
+    @Produces("application/json")
+    @Consumes("application/json")
     public Response delete(@PathParam("id") Long id) {
-		QuestionService questionService = new QuestionService();     
-		questionService.delete(id);
-		
+        QuestionService questionService = new QuestionService();
+        questionService.delete(id);
+
         return Response.ok().build();
-    } 
-    
+    }
+
     @Path("/")
-    @POST 
-    @Produces("application/json") 
-    @Consumes("application/json") 
+    @POST
+    @Produces("application/json")
+    @Consumes("application/json")
     public Response create(Question question) {
-		QuestionService questionService = new QuestionService();    
-		
-		Question questionBean = (Question) questionService.create(question);
-		br.tools.treinamento.Question questionEntity = new br.tools.treinamento.Question();
-		
-		questionEntity.setId(questionBean.getId());
-		questionEntity.setFieldId(questionBean.getFieldId());
-		questionEntity.setQuestion(questionBean.getQuestion());		
-		
+        QuestionService questionService = new QuestionService();
+
+        Question questionBean = (Question) questionService.create(question);
+        br.tools.treinamento.entity.Question questionEntity = new br.tools.treinamento.entity.Question();
+
+        questionEntity.setId(questionBean.getId());
+        questionEntity.setFieldId(questionBean.getFieldId());
+        questionEntity.setQuestion(questionBean.getQuestion());
+
         return Response.ok(questionEntity).build();
     }
 
     @Path("/")
-    @PUT 
-    @Produces("application/json") 
-    @Consumes("application/json") 
+    @PUT
+    @Produces("application/json")
+    @Consumes("application/json")
     public Response update(Question question) {
-		QuestionService questionService = new QuestionService();     
+        QuestionService questionService = new QuestionService();
 
-		Question questionBean = (Question) questionService.update(question);
-		br.tools.treinamento.Question questionEntity = new br.tools.treinamento.Question();
-		
-		questionEntity.setId(questionBean.getId());
-		questionEntity.setFieldId(questionBean.getFieldId());
-		questionEntity.setQuestion(questionBean.getQuestion());	
-		
+        Question questionBean = (Question) questionService.update(question);
+        br.tools.treinamento.entity.Question questionEntity = new br.tools.treinamento.entity.Question();
+
+        questionEntity.setId(questionBean.getId());
+        questionEntity.setFieldId(questionBean.getFieldId());
+        questionEntity.setQuestion(questionBean.getQuestion());
+
         return Response.ok(questionEntity).build();
-    } 
-	
-	
+    }
+
 }

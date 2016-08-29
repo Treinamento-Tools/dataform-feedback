@@ -25,10 +25,10 @@ public class QuestionWS implements QuestionWSInterface {
     @Override
     public void load(final List<Question> questions) {
 
-        final List<br.tools.treinamento.Question> listQ = new ArrayList<>();
+        final List<br.tools.treinamento.entity.Question> listQ = new ArrayList<>();
 
         for (final Question question : questions) {
-            final br.tools.treinamento.Question q = new br.tools.treinamento.Question();
+            final br.tools.treinamento.entity.Question q = new br.tools.treinamento.entity.Question();
 
             q.setFieldId(question.getFieldId());
             q.setId(question.getId());

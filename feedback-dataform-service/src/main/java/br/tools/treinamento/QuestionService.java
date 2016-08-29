@@ -20,9 +20,9 @@ public class QuestionService implements Serializable {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public void load(final List<br.tools.treinamento.Question> questions) {
+	public void load(final List<br.tools.treinamento.entity.Question> questions) {
 
-		for (br.tools.treinamento.Question question : questions) {
+		for (br.tools.treinamento.entity.Question question : questions) {
 			entityManager.persist(question);
 		}
 	}
